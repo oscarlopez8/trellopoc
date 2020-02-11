@@ -6,11 +6,9 @@ pipeline {
         sh 'pip3 install -r requirements.txt'
       }
     }
-    stage('Testing') {
-      stage('API') {
-        steps {
-          sh 'behave trello/api/features'
-        }
+    stage('API') {
+      steps {
+        sh 'behave trello/api/features'
       }
     }
   }
