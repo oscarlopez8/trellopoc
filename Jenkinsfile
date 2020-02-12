@@ -1,13 +1,11 @@
 pipeline {
   agent { docker { image 'python:3.6.9' } }
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
-            }
-        }
-    }
   stages {
+    stage('build') {
+      steps {
+        sh 'python --version'
+      }
+    }
     stage('Install Requirements') {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
