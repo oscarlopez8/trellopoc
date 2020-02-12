@@ -4,7 +4,7 @@ pipeline {
     stage('Install Requirements') {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
-          sh 'pip3 install -r requirements.txt'
+          sh 'pip install -r requirements.txt'
         }
       }
     }
