@@ -4,7 +4,8 @@ pipeline {
     stage('Install Requirements') {
       steps {
         withEnv(["HOME=${env.WORKSPACE}"]) {
-          sh 'sudo pip install -r requirements.txt'
+          sh 'sudo su'
+          sh 'pip install -r requirements.txt'
         }
       }
     }
