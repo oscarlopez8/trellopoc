@@ -1,13 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        image 'python:3-alpine'
-      }
-    }
     stage('Install Requirements') {
       steps {
+        image 'python:3-alpine'
         withEnv(["HOME=${env.WORKSPACE}"]) {
           sh 'pip3 install -r requirements.txt'
         }
